@@ -1,8 +1,10 @@
-'use strict';
-function makeTransaction(quantity, pricePerDroid) {
-    return `You ordered ${quantity} droids worth ${quantity * pricePerDroid} credits!`;
-}
- 
-console.log(makeTransaction(5, 3000)); // "You ordered 5 droids worth 15000 credits!"
-console.log(makeTransaction(3, 1000)); // "You ordered 3 droids worth 3000 credits!"
-console.log(makeTransaction(10, 500)); // "You ordered 10 droids worth 5000 credits!"
+const allItems = document.querySelectorAll('.item');
+console.log(`Number of categories: ${allItems.length}`);
+console.log(`Categories: ${allItems.firstElementChild}`);
+const firstEl = allItems.lastElementChild;
+console.log(allItems.lastElementChild);
+allItems.forEach(items => {
+    console.log(items);
+    // console.log(items.length);
+  console.log(`Categories: ${items.childNodes}`);
+});
