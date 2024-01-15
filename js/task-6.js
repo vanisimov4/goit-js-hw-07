@@ -7,30 +7,29 @@ function getRandomHexColor() {
 const inputNumber = document.querySelector('input');
 const btnCreate = document.querySelector('button[data-create]');
 const btnDestroy = document.querySelector('button[data-destroy]');
-const divCollection = document.querySelector('div#boxes')
+const divCollection = document.querySelector('div#boxes');
 
-console.log(divCollection);
+btnCreate.addEventListener('click', () => createBoxes(inputNumber.value));
+btnDestroy.addEventListener('click', destroyBoxes);
 
-btnCreate.addEventListener('click', handleCreate);
-btnDestroy.addEventListener('click', handleDestroy);
+function createBoxes(amount) {
+  destroyBoxes();
+  if (1 <= amount && amount <= 100) {
+    let size = 30;
+    for (let i = 0; i < amount; i++) {
+      const box = document.createElement('div');
+      box.style.width = `${size}px`;
+      box.style.height = `${size}px`;
+      box.style.backgroundColor = getRandomHexColor();
+      box.style.margin = '5px';
 
-function handleCreate(event) { 
-  if (1 <= inputNumber && inputNumber <= 100) { 
-
+      divCollection.appendChild(box);
+      size += 10;
+    }
+    inputNumber.value = '';
   }
 }
 
-function handleDestroy(event) { 
-
-}
-
-function createBoxes(amount) { 
-  const arrCollection = [];
-  let count = 0;
-
-while (count < amount) {
-  console.log(`Count: ${count}`);
-  arrCollection.push();
-  count += 1;
-}
+function destroyBoxes(event) {
+  divCollection.innerHTML = '';
 }
