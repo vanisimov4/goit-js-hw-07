@@ -21,7 +21,6 @@ function createBoxes(amount) {
       box.style.width = `${size}px`;
       box.style.height = `${size}px`;
       box.style.backgroundColor = getRandomHexColor();
-      box.style.margin = '5px';
 
       divCollection.appendChild(box);
       size += 10;
@@ -30,6 +29,6 @@ function createBoxes(amount) {
   }
 }
 
-function destroyBoxes(event) {
+function destroyBoxes() {
   divCollection.innerHTML = '';
 }

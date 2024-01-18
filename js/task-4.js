@@ -2,10 +2,9 @@ const form = document.querySelector('form.login-form');
 
 form.addEventListener('submit', handleSubmit);
 
-const userData = {};
-
 function handleSubmit(event) {
   event.preventDefault();
+  const userData = {};
   const form = event.target;
   const email = form.elements.email.value;
   const password = form.elements.password.value;
